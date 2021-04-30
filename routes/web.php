@@ -20,3 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/orgControlPanel', 'App\Http\Controllers\movePageController@GoToOrgControlPanel')->name('orgControlPanel');
+Route::get('/volunteerNew', 'App\Http\Controllers\movePageController@GoToVolunteerNew')->name('volunteerNew');
+Route::get('/volunteerPast', 'App\Http\Controllers\movePageController@GoToVolunteerPast')->name('volunteerPast');
