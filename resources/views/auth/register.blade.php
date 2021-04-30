@@ -94,7 +94,7 @@
                             <label for="summary" class="col-md-4 col-form-label text-md-right">Summary</label>
 
                             <div class="col-md-6">
-                                <input id="summary" type="text" class="form-control @error('summary') is-invalid @enderror" name="summary" value="{{ old('summary') }}" required autocomplete="name" autofocus>
+                                <input id="summary" type="text" class="form-control @error('summary') is-invalid @enderror" name="summary" value="{{ old('summary') }}" autocomplete="name" autofocus>
 
                                 @error('summary')
                                     <span class="invalid-feedback" role="alert">
@@ -108,7 +108,7 @@
                             <label for="organization" class="col-md-4 col-form-label text-md-right">organization</label>
 
                             <div class="col-md-6">
-                                <input id="organization" type="text" class="form-control @error('organization') is-invalid @enderror" name="organization" value="{{ old('organization') }}" required autocomplete="organization" autofocus>
+                                <input id="organization" type="text" class="form-control @error('organization') is-invalid @enderror" name="organization" value="{{ old('organization') }}" autocomplete="organization" autofocus>
 
                                 @error('organization')
                                     <span class="invalid-feedback" role="alert">
