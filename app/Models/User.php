@@ -11,6 +11,14 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    public function trips() {
+        return $this->hasMany(Trip::class);
+    }
+
+    public function applications() {
+        return $this->hasMany(Application::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
