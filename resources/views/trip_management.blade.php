@@ -44,6 +44,7 @@ th {
                 <th >Seats</th>
                 <th >Gender</th>
                 <th >Scheduled_at</th>
+                <th>Details</th>
             </tr>
             </thead>
             <tbody>
@@ -56,6 +57,7 @@ th {
                     <td>{{$Trip->seats}}</td>
                     <td>{{$Trip->gender}}</td>
                     <td>{{$Trip->scheduled_at}}</td>
+                    <td><a href="{{ route('trip.show', ['trip' => $Trip->id]) }}">Click Here</a></td>
                 </tr>
                 @endforeach
             </tbody>

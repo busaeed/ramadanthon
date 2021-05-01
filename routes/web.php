@@ -29,3 +29,4 @@ Route::resource('trip', TripController::class)->names('trip');
 Route::get('/volunteer', [VolunteerController::class, 'volunteer'])->name('volunteer');
 
 Route::get('/apply/{id}', [VolunteerController::class, 'apply'])->name('apply');
+Route::get('/accept/{id}/{trip}', [TripController::class, 'accept'])->name('accept');

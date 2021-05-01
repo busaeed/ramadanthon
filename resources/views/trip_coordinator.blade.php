@@ -24,12 +24,11 @@
 
     <br><br>
 
-    @if ($hasAlreadyapplied)
-        YOU HAVE ALREADY APPLIED FOR THIS VOLUNTEERY WORK.
-    @elseif ($availableSeats < 1 || $isDateOver)
-        SORRY, YOU CANNOT APPLY FOR THIS VOLUNTEERY WORK.
-    @else
-        <a style="font-weight: bold;" href="{{ route('apply', ['id' => $trip->id]) }}">APPLY NOW FOR THIS VOLUNTEERY WORK.</a>
+    @if ($availableSeats > 0)
+    Pending applications: (Click on user to accept)<br>
+    @foreach ($tripPendingApplications as $application)
+        <a href="{{ route('accept', ['id' => $application->id, 'trip' => $trip->id]) }}">{{ $application->user->name }}</a><br>
+    @endforeach
     @endif
 
     @endsection

@@ -42,15 +42,22 @@ body{
         <div id="app">
         <nav class="navbar navbar-expand-md ">
 
+            @php
+                $currentRole = (Auth::user() == null) ? "guest" : Auth::user()->role;
+            @endphp
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto" style="margin: auto">
+                    @if($currentRole == "volunteer")
                     <li class="nav-item">
                         <a class="nav-link NL" href="{{route('volunteer')}}">الفرص التطوعية الحالية</a>
                     </li>
+                    @elseif ($currentRole == "coordinator")
                     <li class="nav-item">
                         <a class="nav-link NL" href="{{route('trip.index')}}">ادارة الاعمال التطوعية</a>
                     </li>
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->
