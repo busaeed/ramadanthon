@@ -1,27 +1,6 @@
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>orgControlPanel page</title>
+@extends('layouts.app')
+@section('content')
 
-    <style>
-            table, td, th {
-            text-align: center;
-            border: 1px solid black;
-            }
-
-            table {
-            width: 100%;
-            border-collapse: collapse;
-            }
-</style>
-</head>
-<body>
-
-    <h1>هنا الكنترول للمنسق , يضيف تريب جديدة </h1>
 
 
         <div class="m-2 float-right">
@@ -55,5 +34,4 @@
             </tbody>
         </table>
 
-</body>
-</html>
+        @endsection
