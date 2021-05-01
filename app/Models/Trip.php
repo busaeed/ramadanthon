@@ -9,13 +9,21 @@ class Trip extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'description',
+        'gender',
+        'seats',
+        'scheduled_at',
+        'user_id',
+        'photo',
+        
+
+    ];
+
     public function user() {
         return $this->belongsTo(User::class);
     }
 
-    protected $fillables = [
-        'user_id',
-        'name',
-        'scheduled_at'
-    ];
+
 }

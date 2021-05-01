@@ -33,9 +33,12 @@
         <div class="w3-bar-item">
             <a href="{{route('volunteerPast')}}">الفرص التطوعية الماضية </a>
         </div>
+        <div class="w3-bar-item">
+            <a href="{{route('orgControlPanel')}}">صفحة المنسق  </a>
+        </div>
     </div>
-
-</div>
+    
+    </div>
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))

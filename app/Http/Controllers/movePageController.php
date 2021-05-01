@@ -6,16 +6,24 @@ use App\Models\Application;
 use App\Models\Trip;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
 Use \Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class movePageController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        
+    }
     //
 
     public function GoToOrgControlPanel(){
 
-        return view('orgControlPanel');
+        $Trips = Trip::all();
+        return view('orgControlPanel',compact('Trips'));
     }
 
     public function GoToVolunteerNew(){
@@ -40,6 +48,21 @@ class movePageController extends Controller
 
         return view('volunteerPast');
     }
+
+    public function create(){
+
+        return view('create');
+    }
+
+    public function store(Request $request){
+        
+        $user = Auth::user();
+        $user->trips()->create($request->all());
+
+        //$Trips = Trip::create($request->all());
+        return view('orgControlPanel');
+    }
+
 
 
 }
