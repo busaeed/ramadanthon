@@ -28,20 +28,26 @@ class movePageController extends Controller
 
     public function GoToVolunteerNew(){
 
-        $currentDateTime = Carbon::today();
+        $currentDate = Carbon::today()->toDateString();;
 
-        $availableSeats = Application::select(DB::raw("trips.seats - count(*)"))
-            ->where('trip_id', '=', 'trips.id')
-            ->where('accepted', '=', '1');
+        $trips = DB::select(DB::raw('
+        select * from
+            (select
+            `id`,
+            `name`,
+            `city`,
+            `scheduled_at`,
+            `photo`,
+            `seats`, 
+            (select trips.seats-count(*) from `applications` where `trip_id` = trips.id and `accepted` = 1) as available_seats
+            from `trips`) as thetable
+            where thetable.scheduled_at > CURDATE()
+            and thetable.available_seats > 0
+        '));
 
-        $trips = Trip::select('id', 'name', 'city', 'scheduled_at', 'photo', 'seats', DB::raw("({$availableSeats->toSql()}) as availabe_seats"))
-            ->mergeBindings($availableSeats->getQuery())
-            ->where('scheduled_at', '>', $currentDateTime)
-            ->get();
+        return view('volunteerNew', compact('trips'));
 
-        //return view('volunteerNew');
-
-        return dd($trips);
+        //return dd($trips);
     }
 
     public function GoToVolunteerPast(){
