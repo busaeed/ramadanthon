@@ -8,39 +8,32 @@
 
 <body>
     @section('content')
-    <h1>الفرص التطوعية المتاحة</h1>
+    <h2>الفرص التطوعيه</h2>
+        <p><strong>ملاحظه</strong> يشترط على المتطوعين ابراز تطبيق توكلنا وللتأكد من اخذ لقاج كورونا19</p>
 
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th >ID</th>
-            <th >Name</th>
-            <th>Description</th>
-            <th >City</th>
-            <th >Photo</th>
-            <th >Date</th>
-            <th >Seats</th>
-            <th >Available Seats</th>
-            <th>Action</th>
 
-        </tr>
-        </thead>
-        <tbody>
+    <div class="container">
+        <div class="card-deck">
         @foreach($trips as $trip)
-            <tr>
-                <td>{{$trip->id}}</td>
-                <td>{{$trip->name}}</td>
-                <td>{{$trip->description}}</td>
-                <td>{{$trip->city}}</td>
-                <td>{{$trip->photo}}</td>
-                <td>{{$trip->scheduled_at}}</td>
-                <td>{{$trip->seats}}</td>
-                <td>{{$trip->available_seats}}</td>
-                <td><a style="font-weight: bold;" href="trip/{{$trip->id}}">Click Here</a></td>
-            </tr>
+            <div class="card bg-light">
+                <div class=" card-body text-center">
+                    <img class="card-img-top" src="img1/des.jpg" alt="Card image" style="width:100%">
+                    <br>
+                    <h4 class="card-title">{{$trip->name}}</h4>
+                    <h6 class="card-text">{{$trip->description}}</h6>
+                    <p class="card-text">{{$trip->scheduled_at}}</p>
+                    <p class="card-text">الجنس : {{$trip->gender}}</p>
+                    <p class="card-text">عدد المتطوعين المطلوب {{$trip->seats}}/{{$trip->available_seats}}</p>
+                    <a href="#" class="btn btn-primary">Join</a>
+                </div>
+            </div> 
             @endforeach
-        </tbody>
-    </table>
+        </div>    
+    </div>
+    
+    
+    <br>
+    
     @endsection
 </body>
 </html>
