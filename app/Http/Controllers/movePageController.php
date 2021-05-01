@@ -52,7 +52,16 @@ class movePageController extends Controller
 
     public function GoToVolunteerPast(){
 
-        return view('volunteerPast');
+        $currentDateTime = Carbon::today();
+        $Trips = Trip::all();
+        foreach($Trips as $key=>$Trip)
+                {
+                    if($Trip->scheduled_at > $currentDateTime)
+                    {
+                        $Trips->forget($key);
+                    }
+                }
+        return view('volunteerPast',compact('Trips'));
     }
 
     public function create(){
