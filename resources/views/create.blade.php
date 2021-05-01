@@ -19,6 +19,16 @@
             </div> 
 
             <div class="form-group">
+                <label for="city"><span style="color:red;">* </span>City</label>
+                <input type="text" name="city" id="city" placeholder="city" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="photo"></span>Photo</label>
+                <input type="text" name="photo" id="photo" placeholder="photo" class="form-control" >
+            </div>
+
+            <div class="form-group">
                 <label for="description"><span style="color:red;">* </span>Description</label>
                 <input type="text" name="description" id="description" placeholder="description" class="form-control" required>
             </div>
@@ -26,9 +36,9 @@
             <div class="form-group">
                 <label for="gender"><span style="color:red;">* </span>Gender</label>
                 <select name="gender" id="gender" class="form-control">
-                    <option value="M">Male</option>
-                    <option value="F">Female</option>
-                    <option value="MF">Male & Female</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="both">Male & Female</option>
                 </select>
             </div>
 
