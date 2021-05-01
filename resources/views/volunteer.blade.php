@@ -4,13 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <title>الفرص التطوعية المتاحة</title>
+    <style>
+        .ttt{
+
+  margin: auto;
+  width: 60%;
+
+  padding: 10px;
+    text-align: center;
+
+        }
+    </style>
+
 </head>
 
 <body>
     @section('content')
+    <div class="ttt">
     <h2>الفرص التطوعيه</h2>
-        <p><strong>ملاحظه</strong> يشترط على المتطوعين ابراز تطبيق توكلنا وللتأكد من اخذ لقاج كورونا19</p>
-
+    <p><strong>ملاحظه</strong> يشترط على المتطوعين ابراز تطبيق توكلنا وللتأكد من اخذ لقاج كورونا19</p>
+    </div>
 
     <div class="container">
         <div class="card-deck">

@@ -26,7 +26,7 @@ th {
 </style>
 </head>
 
-,<body>
+<body>
     @section('content')
 
     <h1>ادارة الفرص التطوعية</h1>
