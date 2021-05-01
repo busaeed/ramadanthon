@@ -1,0 +1,416 @@
+.navbar {
+    background: black;
+}
+
+.scroll {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    animation: scrollAnim 0.5s;
+}
+
+@keyframes scrollAnim {
+    0% {
+        top: -57px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+.NL {
+    color: white;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.NL:hover {
+    color: red;
+}
+
+.nav-toggler {
+    outline: none !important;
+}
+
+.Colored {
+    background: black;
+    color: white;
+}
+
+.List {
+    width: 100%;
+    margin: auto;
+}
+
+@media (max-width: 767px) {
+    .List {
+        text-align: center;
+    }
+}
+
+.List-Title {
+    padding: 0 0 5px 0;
+    border-bottom: 2px solid red;
+}
+
+.Item {
+    list-style: none;
+}
+
+.Item::before {
+    content: "\f054";
+    font-family: "font awesome 5 free";
+    color: red;
+    margin-right: 2px;
+}
+
+.List-Menu {
+    overflow: hidden;
+    height: 150px;
+}
+
+.My-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Con-Body {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Title */
+.Title {
+    color: red;
+}
+/* End Title */
+
+/* Imaged Background */
+.Imaged {
+    color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* End Imaged Background */
+
+/* Blurer */
+.Blurer {
+    position: relative;
+    height: 100%;
+    background: #000000b3;
+}
+/* End Blurer */
+
+/* Margined */
+.Margined {
+    margin-top: 50px;
+}
+
+.PCPartBox {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 200px;
+    transition: 0.5s;
+    color: #343a40;
+    margin: 2em 0;
+}
+
+.PCPartBox:hover {
+    color: #007bff;
+}
+
+.Icon {
+    text-align: center;
+}
+
+.Price {
+    color: red;
+}
+
+/* Link */
+a {
+    width: auto;
+    text-decoration: none !important;
+}
+/* End Link */
+
+/* Button */
+/*.btn {
+    min-width: 150px;
+}*/
+/* End Button */
+
+/* Image */
+.IMG {
+    width: 100%;
+}
+/* End Image */
+
+/* Image Parent */
+.ImageParent {
+    width: 30px;
+}
+/* End Image Parent */
+
+/* Filter */
+.Filter {
+    height: 100%;
+    width: 250px;
+    padding-top: 10px;
+    position: absolute;
+    z-index: 100;
+}
+.filterToggler {
+    padding: 0 10px;
+    cursor: pointer;
+    display: inline-block;
+    color: #343a40;
+}
+.popup {
+    position: relative;
+    display: none;
+    margin-top: 14px;
+    width: 100%;
+}
+.content {
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 0 5px #ccc;
+    position: relative;
+    display: inline-block;
+    padding: 14px;
+    width: 100%;
+    text-align: center;
+}
+.show {
+    display: inline-block;
+}
+.titleContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.4em;
+    text-align: left;
+}
+/* End Filter */
+
+/* Borderd Title */
+.BorderTitle {
+    text-align: left;
+    margin: 15px 0;
+    font-size: 1.1em;
+    font-weight: 200;
+    display: inline-block;
+}
+/* End Borderd Title */
+
+/* Table Division */
+/* td {
+    text-align: center;
+} */
+/* End Table Division */
+
+/* classes for filtering the table*/
+.hideIntegrated,
+.hideCpu,
+.hideCoreCount,
+.hidePrice,
+.hidetdp,
+.hideSocket,
+.hideSeries,
+.hideMemorySlots,
+.hideMemoryMax {
+    display: none;
+}
+/* End classes for filtering*/
+
+/* Main Title */
+.MainTitle {
+    height: 100px;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* End Main Title */
+
+/* expand filters */
+.horizontalLine {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.363);
+    text-align: left;
+    width: 100%;
+}
+
+.expand {
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: 200;
+    /* transition: transform 0.5s ease-in; */
+    display: block;
+    position: absolute;
+    padding: 0;
+    line-height: 1;
+}
+/* end expand filters */
+
+/* add button */
+
+.fa-plus {
+    cursor: pointer;
+    color: #343a40;
+}
+
+@media (min-width: 1120px) {
+    #mainContainer {
+        display: grid;
+        grid-template-columns: 15% auto;
+        /* grid-template-rows: 10% auto; */
+        grid-template-areas: "filter main";
+        column-gap: 3em;
+    }
+    #main {
+        grid-area: main;
+    }
+    .Filter {
+        grid-area: filter;
+        position: unset;
+        width: unset;
+        z-index: unset;
+        height: auto;
+        padding: 0;
+    }
+    #mainContainer {
+        padding: 0 0.5em;
+    }
+    .horizontalLine {
+        width: 100%;
+        padding: 0.5em 0;
+    }
+    .titleContainer {
+        display: flex;
+        justify-content: space-between;
+    }
+    .filterToggler {
+        display: none;
+    }
+    .popup {
+        position: unset;
+        display: unset;
+        margin-top: 14px;
+    }
+    .content {
+        background-color: #fff;
+        border: none;
+        box-shadow: unset;
+        position: unset;
+        display: inline-block;
+        padding: 0;
+        width: 100%;
+    }
+    .customRow {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 1224px) {
+    .customRow {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+    }
+}
+.delete-btn {
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.deleted {
+    background-color: #f8d7da;
+    /* visibility: hidden; */
+}
+
+.preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 142px;
+    height: 40px;
+    margin: -20px 0 0 -71px;
+    background: #fff;
+    filter: contrast(20);
+}
+.preloader .dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 12px;
+    left: 15px;
+    filter: blur(4px);
+    background: #000;
+    border-radius: 50%;
+    transform: translateX(0);
+    animation: dot 2.8s infinite;
+}
+.preloader .dots {
+    transform: translateX(0);
+    margin-top: 12px;
+    margin-left: 31px;
+    animation: dots 2.8s infinite;
+}
+.preloader .dots span {
+    display: block;
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-left: 16px;
+    filter: blur(4px);
+    background: #000;
+    border-radius: 50%;
+}
+@-moz-keyframes dot {
+    50% {
+        transform: translateX(96px);
+    }
+}
+@-webkit-keyframes dot {
+    50% {
+        transform: translateX(96px);
+    }
+}
+@-o-keyframes dot {
+    50% {
+        transform: translateX(96px);
+    }
+}
+@keyframes dot {
+    50% {
+        transform: translateX(96px);
+    }
+}
+@-moz-keyframes dots {
+    50% {
+        transform: translateX(-31px);
+    }
+}
+@-webkit-keyframes dots {
+    50% {
+        transform: translateX(-31px);
+    }
+}
+@-o-keyframes dots {
+    50% {
+        transform: translateX(-31px);
+    }
+}
+@keyframes dots {
+    50% {
+        transform: translateX(-31px);
+    }
+}
