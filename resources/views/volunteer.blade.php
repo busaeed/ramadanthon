@@ -37,7 +37,7 @@
                     <p class="card-text">{{$trip->scheduled_at}}</p>
                     <p class="card-text">الجنس : {{$trip->gender}}</p>
                     <p class="card-text">عدد المتطوعين المطلوب {{$trip->seats}}/{{$trip->available_seats}}</p>
-                    <a href="#" class="btn btn-primary">Join</a>
+                    <a href="trip/{{$trip->id}}" class="btn btn-primary">Join</a>
                 </div>
             </div> 
             @endforeach
