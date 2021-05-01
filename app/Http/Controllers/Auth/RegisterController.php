@@ -58,7 +58,7 @@ class RegisterController extends Controller
             'summary' => ['required_if:role,volunteer', 'max:512'],
             'Phone' => ['required', 'string', 'min:10', 'max:14'],
             'organization' => [ 'required_if:role,coordinator', 'max:64'],
-
+            'gender' => ['required']
             
         ]);
     }
@@ -78,7 +78,8 @@ class RegisterController extends Controller
             'role' => $data['role'],
             'summary' => $data['summary'],
             'Phone' => $data['Phone'],
-            'organization' => $data['organization']
+            'organization' => $data['organization'],
+            'gender' => $data['gender']
         ]);
     }
 }

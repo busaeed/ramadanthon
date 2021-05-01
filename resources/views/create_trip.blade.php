@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <h1>Add new Trip</h1>
-<form action="{{ route('store') }}" method="post"  enctype="multipart/form-data">
+<form action="{{ route('trip.store') }}" method="post"  enctype="multipart/form-data">
     @csrf 
         
             <div class="form-group">
@@ -17,11 +17,6 @@
                     <option value="Dammam">Dammam</option>
                 </select>
             </div> 
-
-            <div class="form-group">
-                <label for="city"><span style="color:red;">* </span>City</label>
-                <input type="text" name="city" id="city" placeholder="city" class="form-control" required>
-            </div>
 
             <div class="form-group">
                 <label for="photo"></span>Photo</label>

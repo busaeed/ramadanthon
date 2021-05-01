@@ -13,6 +13,10 @@ class Application extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function trip() {
+        return $this->belongsTo(Trip::class);
+    }
+
     protected $fillables = [
         'user_id',
         'trip_id'

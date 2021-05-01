@@ -31,7 +31,8 @@ class User extends Authenticatable
         'role',
         'summary',
         'organization',
-        'Phone'
+        'Phone',
+        'gender'
     ];
 
     /**

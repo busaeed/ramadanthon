@@ -37,21 +37,6 @@ body{
     </style>
 </head>
 <body>
-<!-- 
-        <div class="w3-container">
-            <div class="w3-bar w3-border w3-light-grey">
-                <div class="w3-bar-item">
-                    <a href="{{route('volunteerNew')}}">الفرص التطويعة المتاحة</a>
-                </div>
-                <div class="w3-bar-item">
-                    <a href="{{route('volunteerPast')}}">الفرص التطوعية الماضية </a>
-                </div>
-                <div class="w3-bar-item">
-                    <a href="{{route('orgControlPanel')}}">صفحة المنسق  </a>
-                </div>
-            </div>
-        </div> 
-        -->
 
         
         <div id="app">
@@ -61,13 +46,10 @@ body{
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto" style="margin: auto">
                     <li class="nav-item">
-                        <a class="nav-link NL" href="{{route('volunteerNew')}}">الفرص التطوعية الحالية</a>
+                        <a class="nav-link NL" href="{{route('volunteer')}}">الفرص التطوعية الحالية</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link NL" href="{{route('volunteerPast')}}">الفرص التطوعية الماضية</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link NL" href="{{route('orgControlPanel')}}">orgControlPanel</a>
+                        <a class="nav-link NL" href="{{route('trip.index')}}">ادارة الاعمال التطوعية</a>
                     </li>
                 </ul>
 

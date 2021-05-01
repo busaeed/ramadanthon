@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\TripController;
+use App\Http\Controllers\VolunteerController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,11 +24,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/volunteerNew', 'App\Http\Controllers\movePageController@GoToVolunteerNew')->name('volunteerNew');
-Route::get('/volunteerPast', 'App\Http\Controllers\movePageController@GoToVolunteerPast')->name('volunteerPast');
+Route::resource('trip', TripController::class)->names('trip');
 
-Route::get('/orgControlPanel', 'App\Http\Controllers\movePageController@GoToOrgControlPanel')->name('orgControlPanel');
-Route::get('/create', 'App\Http\Controllers\movePageController@create')->name('create');
-Route::post('/store' , 'App\Http\Controllers\movePageController@store')->name('store');
+Route::get('/volunteer', [VolunteerController::class, 'volunteer'])->name('volunteer');
 
-
+Route::get('/apply/{id}', [VolunteerController::class, 'apply'])->name('apply');

@@ -1,10 +1,17 @@
 @extends('layouts.app')
-@section('content')
 
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>ادارة الرحلات التطوعية</title>
+</head>
 
+,<body>
+    @section('content')
 
+    <h1>ادارة الفرص التطوعية</h1>
         <div class="m-2 float-right">
-            <a href="{{ route ('create')}}" class="btn btn-dark">اضافة رحلة جديدة</a> 
+            <a href="{{ route ('trip.create')}}" class="btn btn-dark">اضافة رحلة جديدة</a> 
         </div>
 
         <table class="table table-striped">
@@ -35,3 +42,5 @@
         </table>
 
         @endsection
+
+        </body>
