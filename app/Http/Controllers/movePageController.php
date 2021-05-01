@@ -60,7 +60,8 @@ class movePageController extends Controller
         $user->trips()->create($request->all());
 
         //$Trips = Trip::create($request->all());
-        return view('orgControlPanel');
+        // return view('orgControlPanel');
+        return redirect()->route('orgControlPanel');
     }
 
 
