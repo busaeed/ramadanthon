@@ -17,6 +17,7 @@ class Trip extends Model
         'scheduled_at',
         'user_id',
         'photo',
+        'city'
         
 
     ];

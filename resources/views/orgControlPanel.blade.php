@@ -33,6 +33,7 @@
             <tr>
                 <th >ID</th>
                 <th >Name</th>
+                <th >City</th>
                 <th >Description</th>
                 <th >Seats</th>
                 <th >Gender</th>
@@ -44,6 +45,7 @@
                 <tr>
                     <td>{{$Trip->id}}</td>
                     <td>{{$Trip->name}}</td>
+                    <td>{{$Trip->city}}</td>
                     <td>{{$Trip->description}}</td>
                     <td>{{$Trip->seats}}</td>
                     <td>{{$Trip->gender}}</td>

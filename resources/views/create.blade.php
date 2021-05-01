@@ -8,7 +8,7 @@
             <label for="name"><span style="color:red;">* </span>Trip Name</label>
             <input type="text" name="name" id="name" placeholder="Name" class="form-control" required>
             </div>
-            <!--             
+                        
             <div class="form-group">
                 <label for="city"><span style="color:red;">* </span>City</label>
                 <select name="city" id="city" class="form-control">
@@ -17,7 +17,6 @@
                     <option value="Dammam">Dammam</option>
                 </select>
             </div> 
-            -->
 
             <div class="form-group">
                 <label for="description"><span style="color:red;">* </span>Description</label>
