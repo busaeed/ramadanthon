@@ -29,6 +29,7 @@ class VolunteerController extends Controller
             `city`,
             `scheduled_at`,
             `photo`,
+            `description`,
             `seats`, 
             (select trips.seats-count(*) from `applications` where `trip_id` = trips.id and `accepted` = 1) as available_seats
             from `trips`) as thetable

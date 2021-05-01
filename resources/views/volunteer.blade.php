@@ -15,12 +15,14 @@
         <tr>
             <th >ID</th>
             <th >Name</th>
+            <th>Description</th>
             <th >City</th>
             <th >Photo</th>
             <th >Date</th>
             <th >Seats</th>
             <th >Available Seats</th>
-            <th>Details</th>
+            <th>Action</th>
+
         </tr>
         </thead>
         <tbody>
@@ -28,6 +30,7 @@
             <tr>
                 <td>{{$trip->id}}</td>
                 <td>{{$trip->name}}</td>
+                <td>{{$trip->description}}</td>
                 <td>{{$trip->city}}</td>
                 <td>{{$trip->photo}}</td>
                 <td>{{$trip->scheduled_at}}</td>

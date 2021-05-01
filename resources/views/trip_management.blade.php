@@ -4,6 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <title>ادارة الرحلات التطوعية</title>
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color:  #cccccc}
+tr:nth-child(odd){background-color: #808080}
+
+
+th {
+  background-color: #8c7373;
+  color: white;
+}
+</style>
 </head>
 
 ,<body>
