@@ -24,7 +24,8 @@ class TripController extends Controller
 
     public function index()
     {
-        $Trips = Trip::all();
+        $user = Auth::user();
+        $Trips = $user->trips()->get();
         return view('trip_management',compact('Trips'));
     }
 

@@ -45,12 +45,15 @@ body{
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto" style="margin: auto">
+                    @if (Auth::user()->role == "volunteer")
                     <li class="nav-item">
                         <a class="nav-link NL" href="{{route('volunteer')}}">الفرص التطوعية الحالية</a>
                     </li>
+                    @else
                     <li class="nav-item">
                         <a class="nav-link NL" href="{{route('trip.index')}}">ادارة الاعمال التطوعية</a>
                     </li>
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->
