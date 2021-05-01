@@ -43,9 +43,9 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if ($user->role === "volunteer") {
-            return redirect()->route('volunteerNew');
+            return redirect()->route('volunteer');
         } else {
-            return redirect()->route('orgControlPanel');
+            return redirect()->route('trip.index');
         }
     }
 }

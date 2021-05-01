@@ -60,12 +60,12 @@ class TripController extends Controller
     public function show($id)
     {
         $trip = Trip::find($id);
-        $numberOfApplications = $trip->applications()->count();
         $isDateOver = Carbon::today()->greaterThanOrEqualTo($trip->scheduled_at);
         $user = Auth::user();
+        $availableSeats = $trip->seats - Application::where('trip_id', '=', $id)->where('accepted', '=', '1')->count();
         if ($user->role === "volunteer") {
             $hasAlreadyapplied = Application::where('user_id', '=', $user->id)->where('trip_id', '=', $id)->count() == 0 ? false : true;
-            return view('trip_volunteer', compact('trip', 'numberOfApplications', 'hasAlreadyapplied', 'isDateOver'));
+            return view('trip_volunteer', compact('trip', 'hasAlreadyapplied', 'isDateOver', 'availableSeats'));
         } else {
             return view('trip_coordinator', compact('trip'));
         }

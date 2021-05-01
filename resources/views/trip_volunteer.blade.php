@@ -20,13 +20,13 @@
     City: {{$trip->city}}<br>
     Date: {{$trip->scheduled_at}}<br>
     Seats: {{$trip->seats}}<br>
-    Available Seat: {{$trip->seats-$numberOfApplications}}<br>
+    Available Seat: {{$availableSeats}}<br>
 
     <br>
 
     @if ($hasAlreadyapplied)
         YOU HAVE ALREADY APPLIED FOR THIS VOLUNTEERY WORK.
-    @elseif ($trip->seats-$numberOfApplications < 1 || $isDateOver)
+    @elseif ($availableSeats < 1 || $isDateOver)
         SORRY, YOU CANNOT APPLY FOR THIS VOLUNTEERY WORK.
     @else
         <a style="font-weight: bold;" href="{{ route('apply', ['id' => $trip->id]) }}">APPLY NOW FOR THIS VOLUNTEERY WORK.</a>
