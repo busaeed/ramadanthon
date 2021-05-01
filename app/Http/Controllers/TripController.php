@@ -68,7 +68,9 @@ class TripController extends Controller
             $hasAlreadyapplied = Application::where('user_id', '=', $user->id)->where('trip_id', '=', $id)->count() == 0 ? false : true;
             return view('trip_volunteer', compact('trip', 'hasAlreadyapplied', 'isDateOver', 'availableSeats'));
         } else {
-            return view('trip_coordinator', compact('trip'));
+            $tripPendingApplications = Application::with('user')->where('trip_id', '=', $id)->where('accepted', '=', '0')->get();
+            return dd($tripPendingApplications);
+            //return view('trip_coordinator', compact('trip'));
         }
     }
 
