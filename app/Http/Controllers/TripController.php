@@ -69,9 +69,16 @@ class TripController extends Controller
             return view('trip_volunteer', compact('trip', 'hasAlreadyapplied', 'isDateOver', 'availableSeats'));
         } else {
             $tripPendingApplications = Application::with('user')->where('trip_id', '=', $id)->where('accepted', '=', '0')->get();
-            return dd($tripPendingApplications);
-            //return view('trip_coordinator', compact('trip'));
+            return view('trip_coordinator', compact('trip', 'tripPendingApplications', 'availableSeats'));
         }
+    }
+
+    public function accept($id, $trip) {
+        $user = Auth::user();
+        $application = Application::find($id);
+        $application->accepted = 1;
+        $application->save();
+        return redirect()->route('trip.show', ['trip' => $trip]);
     }
 
     /**
