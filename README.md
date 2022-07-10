@@ -1,4 +1,4 @@
-A simple project that was made in 2 days in May 2021 for a ramadan hackthon and won third place in that hackthon.
+A simple project that was made in 2 days in May 2021 for a ramadan hackathon and won third place in that hackathon.
 
 https://twitter.com/hackathon_x
 
